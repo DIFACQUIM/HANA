@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 SMARTS_df = pd.read_csv("https://raw.githubusercontent.com/DIFACQUIM/HANA/refs/heads/main/SMARTS_list.csv")
 SMARTS_list = list(SMARTS_df["SMARTS"])
 
-def HANA (smi): #HANA molecular fingerprint
+def hana (smi): #HANA molecular fingerprint
   bits_list = [] # List of bits
 
   mol = Chem.MolFromSmiles(smi)
