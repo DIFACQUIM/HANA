@@ -1,4 +1,3 @@
-# One time only
 import os
 import git
 
@@ -14,10 +13,10 @@ else:
     git.Git().clone("https://github.com/DIFACQUIM/HANA.git", repo_dir)
     print(f"Repository cloned successfully to '{repo_dir}'.")
 
-# Import the hana function correctly
+# Import the hana correctly
 import sys
 sys.path.append(repo_dir)  # Add the repository directory to the system path
 from HANA.hana import hana  # Import the hana function from the correct module
 
-# Now you can call the hana function
+# Now you can call the hana
 print(hana("C1CNCCN1"))
