@@ -6,16 +6,26 @@ import numpy as np
 from rdkit import Chem
 import matplotlib.pyplot as plt
 
-SMARTS_df = pd.read_csv("https://raw.githubusercontent.com/DIFACQUIM/HANA/refs/heads/main/SMARTS_list.csv")
-SMARTS_list = list(SMARTS_df["SMARTS"])
+SMARTS_1 = pd.read_csv("https://raw.githubusercontent.com/DIFACQUIM/HANA/refs/heads/main/SMARTS_list.csv")
+SMARTS_2 = pd.read_csv("https://raw.githubusercontent.com/DIFACQUIM/HANA/refs/heads/main/SMARTS_list2.csv")
+SMARTS_list1 = list(SMARTS_1["SMARTS"])
+SMARTS_list2 = list(SMARTS_2["SMARTS"])
 
-def hana (smi): #HANA molecular fingerprint
+def hana (smi, bits): #HANA molecular fingerprint
   bits_list = [] # List of bits
 
   mol = Chem.MolFromSmiles(smi)
 
   # Bits
-  for i in SMARTS_list:
+  if bits =1000
+  for i in SMARTS_list2:
+    if mol.HasSubstructMatch(Chem.MolFromSmarts(i)):
+      bits_list.append(1)
+    else:
+      bits_list.append(0)
+      
+  else:
+  for i in SMARTS_list1:
     if mol.HasSubstructMatch(Chem.MolFromSmarts(i)):
       bits_list.append(1)
     else:
