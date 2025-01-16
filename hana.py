@@ -17,11 +17,11 @@ def hana (smi,bits): #HANA molecular fingerprint
   mol = Chem.MolFromSmiles(smi)
 
   # Bits
-  if bits==1000:
-    SMARTS_list = SMARTS_list2
-    
-  elif bits==200:
+  if bits==200:
     SMARTS_list = SMARTS_list1
+    
+  elif bits==1000:
+    SMARTS_list = SMARTS_list2
     
   for i in SMARTS_list:
     if mol.HasSubstructMatch(Chem.MolFromSmarts(i)):
