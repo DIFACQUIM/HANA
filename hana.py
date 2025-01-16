@@ -11,24 +11,23 @@ SMARTS_2 = pd.read_csv("https://raw.githubusercontent.com/DIFACQUIM/HANA/refs/he
 SMARTS_list1 = list(SMARTS_1["SMARTS"])
 SMARTS_list2 = list(SMARTS_2["SMARTS"])
 
-def hana (smi, bits): #HANA molecular fingerprint
+def hana (smi,bits): #HANA molecular fingerprint
   bits_list = [] # List of bits
 
   mol = Chem.MolFromSmiles(smi)
 
   # Bits
   if bits==1000:
-    for i in SMARTS_list2:
-      if mol.HasSubstructMatch(Chem.MolFromSmarts(i)):
-        bits_list.append(1)
-      else:
-        bits_list.append(0)
-      
+    SMARTS_list = SMARTS_list2
+    
   elif bits==200:
-    for i in SMARTS_list1:
-      if mol.HasSubstructMatch(Chem.MolFromSmarts(i)):
-        bits_list.append(1)
+    SMARTS_list = SMARTS_list1
+    
+  for i in SMARTS_list:
+    if mol.HasSubstructMatch(Chem.MolFromSmarts(i)):
+      bits_list.append(1)
     else:
       bits_list.append(0)
 
   return bits_list
+
