@@ -23,5 +23,8 @@ https://www.anaconda.com/download
 5. Install git module
 
         pip install gitpython
+6. Clone repository
+
+       git clone https://github.com/DIFACQUIM/HANA.git
    
-7. See examples_files.py
+8. See examples_files.py
