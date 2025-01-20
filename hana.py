@@ -31,3 +31,4 @@ def hana (smi,bits): #HANA molecular fingerprint
 
   return bits_list
 
+print(" >>> Thank you for use Hana. Have a nice day!")
