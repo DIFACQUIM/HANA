@@ -1,5 +1,5 @@
 import rdkit
-print(f"rdkit_version: {rdkit.__version__}")
+print(f">rdkit_version: {rdkit.__version__}")
 
 import pandas as pd
 import numpy as np
@@ -31,4 +31,4 @@ def hana (smi,bits): #HANA molecular fingerprint
 
   return bits_list
 
-print(" >>> Thank you so much for use Hana. Have a nice day! <<<")
+print("> Thank you so much for use Hana. Have a nice day!")
