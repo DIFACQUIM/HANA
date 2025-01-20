@@ -1,5 +1,5 @@
 import rdkit
-#print(f"> rdkit_version: {rdkit.__version__}")
+print(f"> rdkit_version: {rdkit.__version__}")
 
 import pandas as pd
 import numpy as np
