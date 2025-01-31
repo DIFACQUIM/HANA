@@ -1,9 +1,7 @@
 import rdkit
-print(f"> rdkit_version: {rdkit.__version__}")
-
 import pandas as pd
 import numpy as np
-from rdkit import Chem
+from rdkit import Chem,DataStructs
 import matplotlib.pyplot as plt
 
 SMARTS_1 = pd.read_csv("https://raw.githubusercontent.com/DIFACQUIM/HANA/refs/heads/main/SMARTS_list.csv")
