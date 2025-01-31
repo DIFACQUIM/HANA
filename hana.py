@@ -28,7 +28,11 @@ def hana (smi,bits): #HANA molecular fingerprint
       bits_list.append(1)
     else:
       bits_list.append(0)
-
-  return bits_list
+      
+  fp = DataStructs.ExplicitBitVect(bits)
+  for i, bit in enumerate(bits_list):
+    if bit == 1:
+      fp.SetBit(i)  # Set the bits based on the original fingerprint values
+  return fp
 
 print("> Thank you so much for use Hana. Have a nice day!")
