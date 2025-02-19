@@ -9,10 +9,8 @@ SMARTS_2 = pd.read_csv("https://raw.githubusercontent.com/DIFACQUIM/HANA/refs/he
 SMARTS_list1 = list(SMARTS_1["SMARTS"])
 SMARTS_list2 = list(SMARTS_2["SMARTS"])
 
-def hana (smi,bits): #HANA molecular fingerprint
+def hana (mol,bits): #HANA 
   bits_list = [] # List of bits
-
-  mol = Chem.MolFromSmiles(smi)
 
   # Bits
   if bits==200:
