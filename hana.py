@@ -13,10 +13,10 @@ def hana (mol,bits): #HANA
   bits_list = [] # List of bits
 
   # Bits
-  if bits==200:
+  if bits==36:
     SMARTS_list = SMARTS_list1
     
-  elif bits==1000:
+  elif bits==1097:
     SMARTS_list = SMARTS_list2
     
   for i in SMARTS_list:
