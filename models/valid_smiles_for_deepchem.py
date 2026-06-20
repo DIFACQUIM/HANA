@@ -18,12 +18,12 @@ def valid_smiles_for_deepchem(smiles_list):
                 cleaned_smiles.append(smi)
                 continue
 
-            # sanitizar sin estéreo 
+            # sanitize without stereo
             mol.UpdatePropertyCache(strict=False)
             Chem.FastFindRings(mol)
             Chem.SetAromaticity(mol)
 
-            # limpiar todo el estéreo de dobles enlaces 
+            # Cleaning stereo in double bonds 
             for bond in mol.GetBonds():
                 bond.SetBondDir(Chem.BondDir.NONE)
                 if bond.GetStereo() == Chem.BondStereo.STEREOANY:
