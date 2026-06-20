@@ -45,7 +45,7 @@ def valid_smiles_for_deepchem(smiles_list):
                         bond.SetBondDir(Chem.BondDir.NONE)
                 Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
 
-            # SMILES with chirality ─────────
+            # SMILES with chirality 
             smi_clean = Chem.MolToSmiles(
                 mol,
                 isomericSmiles=True,  # Retain @, @@, /, \ --> For avoid error in DeepChem
