@@ -32,13 +32,13 @@ def valid_smiles_for_deepchem(smiles_list):
             # Reassign Stereo from Geometry
             Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
 
-            # Review scaffold 
+            # Review MurckoScaffold 
             try:
                 MurckoScaffold.MurckoScaffoldSmiles(
                     mol=mol, includeChirality=False
                 )
             except RuntimeError:
-                # Final opion: delete stereoquemestry in doble bonds
+                # Final option: delete stereochemistry in double bonds
                 for bond in mol.GetBonds():
                     if bond.GetBondTypeAsDouble() == 2.0:
                         bond.SetStereo(Chem.BondStereo.STEREONONE)
@@ -53,12 +53,12 @@ def valid_smiles_for_deepchem(smiles_list):
             )
             cleaned_smiles.append(smi_clean)
 
-        except Exception as e:
-            print(f"⚠️ SMILES problemático: {smi} → {e}")
+        except Exception as error:
+            print(f"Invalid SMILES: {smi} → {error}")
             invalid_smiles.append(smi)
             cleaned_smiles.append(smi)
 
-    print(f"\nTotal procesados  : {len(cleaned_smiles)}")
-    print(f"Total problemáticos: {len(invalid_smiles)}")
+    print(f"\nTotal cleaned_smiles  : {len(cleaned_smiles)}")
+    print(f"Total invalid_smiles: {len(invalid_smiles)}")
 
     return np.array(cleaned_smiles)
