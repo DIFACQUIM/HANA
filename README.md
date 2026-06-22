@@ -2,6 +2,15 @@
   <h1>HANA</h1>
 </div>
 
+<div align="center">
+  <table border="0">
+    <tr>
+      <td><img src="https://github.com/DIFACQUIM/HANA/blob/main/HANA.png" alt="logo" width="50" /></td>
+      <td><h1>nombre-de-tu-repo</h1></td>
+    </tr>
+  </table>
+</div>
+
 </p>
 <p align="center">
   <img src="https://github.com/DIFACQUIM/HANA/blob/main/HANA.png" alt="descripción"  width="170" />
