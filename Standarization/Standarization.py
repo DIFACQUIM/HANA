@@ -10,17 +10,17 @@ STD = Standardizer() # Get the standardized version of a given SMILES string (ca
 LFC = LargestFragmentChooser() # Select the largest fragment from a salt (ionic compound).
 UC = Uncharger() # Charge corrections are applied to ensure, for example, that free metals are correctly ionized.
 RI = Reionizer() # Neutralize molecule by adding/removing hydrogens.
-TC = TautomerCanonicalizer()  # Return a tautormer “reasonable” from a chemist’s point, but isn’t guaranteed to be the most energetically favourable.
+TC = TautomerCanonicalizer()  # Return a tautomer “reasonable” from a chemist’s point, but it isn’t guaranteed to be the most energetically favourable.
 
 def fix_stereo_any(mol):
     """
-    Cleaning ambiguous doble bond or STEREOANY.
-    RDKit can not canonicalize ambiguoug doble bonds: RuntimeError in Canon.cpp
+    Cleaning an ambiguous double bond or STEREOANY.
+    RDKit can not canonicalize ambiguous double bonds: RuntimeError in Canon.cpp
     """
     for bond in mol.GetBonds():
-        if bond.GetBondTypeAsDouble() == 2.0:  # doble enlace
+        if bond.GetBondTypeAsDouble() == 2.0:  # Double bond.
             if bond.GetStereo() == Chem.rdchem.BondStereo.STEREOANY:
-                # Resetear a STEREONONE para que Canon.cpp no falle
+                # Reset STEREONONE so that Canon.cpp does not fail.
                 bond.SetStereo(Chem.rdchem.BondStereo.STEREONONE)
     return mol
 
@@ -29,7 +29,7 @@ def MasterStandarization(smi):
       # 1. Read SMILES
         mol = Chem.MolFromSmiles(smi,sanitize=True)
         if mol == None:
-            #If rdkit could not parse the smiles, returns Error 1
+            #If rdkit could not parse the smiles, it returns "Error 1".
             return "Error 1"
         else:
             # 2. Standardizer and fragment chooser
@@ -40,19 +40,20 @@ def MasterStandarization(smi):
             try:
               Chem.SanitizeMol(mol)
             except:
-              return "Error 2" #If molecule contain invalid valences, return Error 2
+              return "Error 2" #If molecule contains invalid valences, return "Error 2".
 
             # 4. Retain allowed elements
             allowed_elements = {"H","B","C","N","O","F","Si","P","S","Cl","Se","Br","I"}
             actual_elements = set([atom.GetSymbol() for atom in mol.GetAtoms()])
             if len(actual_elements-allowed_elements) == 0:
 
-              # 5. Uncharge and RemoveIsotopes
+              # 5. Uncharge and remove isotopes
               mol = UC(mol)
               mol = RI(mol)
 
               # 6. Assign Sterochemistry from geometry
               Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
+              mol = fix_stereo_any(mol)
             
               # 7. Canonical tautomer
               mol = TC(mol)
@@ -60,15 +61,15 @@ def MasterStandarization(smi):
               # 8. SMILES validation
               smi_cleaned = Chem.MolToSmiles(
                   mol,
-                  isomericSmiles=True,  # Retain @, @@, /, \ --> For avoid errors in DeepChem
+                  isomericSmiles=True,  # Retain @, @@, /, \ --> For avoid errors in DeepChem.
                   canonical=True        
                   ) 
               
               if Chem.MolFromSmiles(smi_cleaned) is None:
-                # If invalid SMILES persist, return "Error 4"
+                # If invalid SMILES persist, return "Error 4".
                 return "Error 4"
             else:
-              return "Error 3" # If molecule contains other than the allowed elements, return Error 3
+              return "Error 3" # If molecule contains other than the allowed elements, return "Error 3".
             
             return smi_cleaned
 
