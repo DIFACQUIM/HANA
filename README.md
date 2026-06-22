@@ -1,6 +1,8 @@
 # HANA
+
+</p>
 <p align="center">
-  <img src="https://github.com/DIFACQUIM/HANA/blob/main/HANA.png" alt="Descripción de la figura" width="50%" />
+  <img src="https://github.com/DIFACQUIM/HANA/blob/main/HANA.png" alt="descripción" />
 </p>
 
 **Requirements** 
