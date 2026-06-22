@@ -1,5 +1,4 @@
 # HANA
-# ![Figure](https://github.com/DIFACQUIM/HANA/blob/main/HANA.png)
 <p align="center">
   <img src="[https://github.com/DIFACQUIM/HANA/blob/main/HANA.png]" alt="Descripción de la figura" width="50%" />
 </p>
