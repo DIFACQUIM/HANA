@@ -1,4 +1,3 @@
-# HANA
 <div align="center">
   <h1>HANA</h1>
 </div>
