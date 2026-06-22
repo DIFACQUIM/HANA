@@ -4,7 +4,7 @@
 
 </p>
 <p align="center">
-  <img src="https://github.com/DIFACQUIM/HANA/blob/main/HANA.jpg" alt="descripción"  width="200" />
+  <img src="https://github.com/DIFACQUIM/HANA/blob/main/HANA.png" alt="descripción"  width="100" />
 </p>
 
 **Requirements** 
