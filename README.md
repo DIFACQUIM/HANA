@@ -9,25 +9,25 @@
 
 **Requirements** 
 
-1. Dowloand Anaconda navigator.
+1. Download Anaconda Navigator.
 https://www.anaconda.com/download
 
-2. Create a virtual ambient with conda and rdkit.
+2. Create a virtual environment with conda and rdkit.
         
         conda create -c conda-forge -n my-rdkit-env rdkit
    
-3. Install Jupyter notebook. Open anaconda navigator with:
+3. Install Jupyter Notebook. Open Anaconda Navigator with:
 
         anaconda-navigator
    
-   In Anaconda navigator change <base(root)> to <my-rdkit-env>. Then, install Jupyter notebook.
-   Close Anaconda navigator and return to terminal.
+   In Anaconda Navigator, change <base(root)> to <my-rdkit-env>. Then, install Jupyter Notebook.
+   Close Anaconda Navigator and return to the terminal.
         
 4. Activate virtual ambient.
 
         conda activate my-rdkit-env
 
-5. Install git module
+5. Install the Git module
 
         pip install gitpython
 6. Clone repository
