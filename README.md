@@ -20,7 +20,7 @@ https://www.anaconda.com/download
 
         anaconda-navigator
    
-   In Anaconda Navigator, change <base(root)> to <my-rdkit-env>, and then, install Jupyter Notebook.
+   In Anaconda Navigator, change <base(root)> to <my-rdkit-env> and then install Jupyter Notebook.
    Close Anaconda Navigator and return to the terminal.
         
 4. Activate virtual ambient.
