@@ -23,15 +23,15 @@ https://www.anaconda.com/download
    In Anaconda Navigator, switch from "base(root)" to "my-rdkit-env", then install Jupyter Notebook.
    Close Anaconda Navigator and return to the terminal.
         
-4. Activate virtual ambient.
+4. Activate the virtual environment.
 
         conda activate my-rdkit-env
 
-5. Install the Git module
+5. Install the Git module.
 
         pip install gitpython
-6. Clone repository
+6. Clone repository.
 
        git clone https://github.com/DIFACQUIM/HANA.git
    
-8. See examples_files.py
+8. Review Examples.ipynb.
